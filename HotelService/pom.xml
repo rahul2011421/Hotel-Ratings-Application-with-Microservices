@@ -8,10 +8,10 @@
 		<version>3.3.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.rahul.rating</groupId>
-	<artifactId>RatingServices</artifactId>
+	<groupId>com.rahul.hotel</groupId>
+	<artifactId>HotelService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>RatingServices</name>
+	<name>HotelServices</name>
 	<description>Hotel Rating project using Microservices</description>
 	<url/>
 	<licenses>

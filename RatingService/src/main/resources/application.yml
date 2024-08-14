@@ -15,6 +15,9 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+  properties:
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL8Dialect
 
 eureka:
   instance:
@@ -24,3 +27,4 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: http://localhost:8761/eureka
+

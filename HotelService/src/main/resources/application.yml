@@ -2,6 +2,9 @@ server:
   port: 8072
 
 spring:
+  config:
+    import: configserver:http://localhost:8075
+
   application:
     name: HOTEL-SERVICE
   datasource:
@@ -19,12 +22,12 @@ spring:
     hibernate:
       dialect: org.hibernate.dialect.MySQL8Dialect
 
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
 

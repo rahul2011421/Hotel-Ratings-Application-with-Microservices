@@ -33,9 +33,10 @@ spring:
 
 
 # actuator configurations
+
 management:
   health:
-    circuit-breakers:
+    circuitbreakers:
       enabled: true
   endpoints:
     web:
@@ -45,20 +46,20 @@ management:
     health:
       show-details: always
 
+# Resilience4j configuration
 
-# resilience4J configuration
+resilience4j:
+  circuitbreaker:
+    instances:
+      ratingHotelBreaker:
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 6s
+        permittedNumberOfCallsInHalfOpenState: 3
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED
 
-resilience:
-  circuit-breaker:
-    instance:
-      ratingHotelBreaker
-    registerHealthIndicator: true
-    eventConsumerBufferSize: 10
-    failureRateThreshold: 50
-    minimumNumberOfCalls: 5
-    automaticTransitionFromOpenToHalfOpenEnabled: true
-    waitDurationInOpenState: 6s
-    permittedNumberOfCallsInHalfOpenState: 3
-    slidingWindowSize: 10
-    slidingWindowType: COUNT_BASED
 
